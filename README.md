@@ -1,4 +1,4 @@
 # Joc-Potingos
 hola
 frola
-mola :D
+mola ;D
