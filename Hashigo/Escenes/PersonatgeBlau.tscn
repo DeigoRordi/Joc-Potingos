@@ -4,19 +4,19 @@
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 17 )
+region = Rect2( 48, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 17 )
+region = Rect2( 0, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 17 )
+region = Rect2( 16, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 0, 16, 17 )
+region = Rect2( 32, 0, 16, 17 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
@@ -24,15 +24,15 @@ region = Rect2( 48, 0, 16, 17 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "Correr",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 5 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "Quiet",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "Correr",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
@@ -43,8 +43,8 @@ extents = Vector2( 41.9886, 66.651 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 8, 8 )
 frames = SubResource( 6 )
-animation = "Correr"
-frame = 1
+animation = "Quiet"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.68323, 4.91095 )

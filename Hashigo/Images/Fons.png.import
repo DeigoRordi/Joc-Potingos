@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fons.png-479eb442a52ec76d512a0fb73d5da624.stex"
+path="res://.import/Fons.png-75947cb204191bb6aa2d2a25a7c8af06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fons.png"
-dest_files=[ "res://.import/Fons.png-479eb442a52ec76d512a0fb73d5da624.stex" ]
+source_file="res://Images/Fons.png"
+dest_files=[ "res://.import/Fons.png-75947cb204191bb6aa2d2a25a7c8af06.stex" ]
 
 [params]
 
