@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Images/Backgrounds/Fons Carrera.png" type="Texture" id=1]
 [ext_resource path="res://Tilesets/Tileset carrera.tres" type="TileSet" id=2]
@@ -6,6 +6,15 @@
 [ext_resource path="res://Escenes/PersonatgeBlau.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Carrera_Blau.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Carrera_vermell.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Temporizador_Carrera.gd" type="Script" id=7]
+[ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 52.6772, 51.7643 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 300
+font_data = ExtResource( 8 )
 
 [node name="Carrera" type="Node"]
 
@@ -37,6 +46,35 @@ script = ExtResource( 6 )
 position = Vector2( 45.4415, -126.758 )
 
 [node name="Start" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 one_shot = true
 autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 206.777, 434.232 )
+shape = SubResource( 1 )
+
+[node name="Temps_text" type="Timer" parent="."]
+
+[node name="Temps" type="Label" parent="."]
+margin_left = 832.0
+margin_top = 384.0
+margin_right = 997.0
+margin_bottom = 688.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "3"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Temps_text" to="Temps" method="_on_Timer_timeout"]
