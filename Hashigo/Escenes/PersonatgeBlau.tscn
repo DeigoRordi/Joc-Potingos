@@ -43,8 +43,8 @@ extents = Vector2( 41.9886, 66.651 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 8, 8 )
 frames = SubResource( 6 )
-animation = "Correr"
-frame = 1
+animation = "Quiet"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.68323, 4.91095 )
