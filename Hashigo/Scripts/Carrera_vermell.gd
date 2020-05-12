@@ -13,8 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.y += 30
 	if $".."/Start.time_left == 0:
+		position.y += 30
 		if Input.is_action_just_pressed("Carrera_vermell"):
 			position.x += 10
 
