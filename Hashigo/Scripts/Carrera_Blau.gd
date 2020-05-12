@@ -13,7 +13,7 @@ func _ready():
 
 
 func _process(delta):
-	position.y += 30
 	if $".."/Start.time_left == 0:
+		position.y += 30
 		if Input.is_action_just_pressed("Carrera_blau"):
 			position.x += 10
