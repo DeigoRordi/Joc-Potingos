@@ -13,11 +13,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if $".."/Start.time_left > 0:
+	if $".."/Start.time_left > 1:
 		self.text = str(int($".."/Start.time_left))
-	elif $".."/Start.time_left <= 0:
-		self.text = "START"
-		$".."/Tiempo_texto.start(1)
+	else:
+		self.text = ""
+
 
 
 func _on_Timer_timeout():
