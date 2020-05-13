@@ -5,7 +5,7 @@ func _process(delta):
 
 
 func _on_Jugar_pressed():
-	get_tree().change_scene("res://Escenes/Sel_Jug.tscn")
+	get_tree().change_scene("res://Escenes/2JUG.tscn")
 
 
 func _on_Sortir_pressed():
