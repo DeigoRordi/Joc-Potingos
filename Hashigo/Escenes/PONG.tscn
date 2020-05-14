@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tilesets/Tileset carrera.tres" type="TileSet" id=1]
+[ext_resource path="res://Images/Backgrounds/Fons Carrera.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 962.646, 509.407 )
+scale = Vector2( 2.25666, 2.25666 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 917507, 11, 0, 917514, 11, 0, 983040, 14, 0, 983043, 11, 0, 983044, 11, 0, 983047, 14, 0, 983048, 14, 0, 983050, 11, 0, 983052, 5, 0, 983059, 13, 0, 983062, 15, 0, 983066, 11, 0, 983069, 15, 0, 1048576, 2, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 4, 0, 1048590, 4, 0, 1048591, 4, 0, 1048592, 4, 0, 1048593, 4, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 1, 0, 1048605, 0, 0 )

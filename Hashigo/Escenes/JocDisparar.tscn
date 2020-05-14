@@ -28,3 +28,7 @@ script = ExtResource( 5 )
 
 [node name="Position2D" type="Position2D" parent="PersonatgeVermell"]
 position = Vector2( 31.658, 28.3257 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
