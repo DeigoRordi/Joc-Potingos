@@ -75,6 +75,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Jugar" to="." method="_on_Jugar_pressed"]
-[connection signal="pressed" from="Minijocs" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="Minijocs" to="." method="_on_Minijocs_pressed"]
 [connection signal="pressed" from="Controls" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="Sortir" to="." method="_on_Sortir_pressed"]
