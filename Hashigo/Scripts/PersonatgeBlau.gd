@@ -4,12 +4,18 @@ var velocitat = Vector2.ZERO
 var velocitat_maxima = 300
 var gravetat = Vector2(0,1000)
 var salt = Vector2(0, -700)
+var vides_blau = 3
 
 const BOLA = preload("res://Escenes/Bola.tscn")
 
 func _process(delta):
 	var moviment = mou(delta)
 	anima(moviment)
+
+func morir():
+	vides_blau -= 1
+	if vides_blau == 0:
+		queue_free()
 
 func mou(delta):
 	velocitat.x = 0
@@ -29,7 +35,7 @@ func mou(delta):
 			$Position2D.position.x *= -1
 		
 	if Input.is_action_just_pressed("ui_up2") and is_on_floor():
-		velocitat = salt
+		velocitat += salt
 	if Input.is_action_just_pressed("ui_focus_next"):
 		var bola = BOLA.instance()
 		if sign($Position2D.position.x) == 1:
@@ -49,12 +55,9 @@ func anima(moviment):
 	if velocitat.x < 0:
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("Correr")
-	
 	elif velocitat.x > 0:
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("Correr")
-	
-	elif velocitat.x == 0:
-		$AnimatedSprite.play("Quiet")
+
 
 
