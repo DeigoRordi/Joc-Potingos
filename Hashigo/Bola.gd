@@ -20,3 +20,13 @@ func _physics_process(delta):
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+
+
+
+func _on_Node2D_body_entered(body):
+	if "PersonatgeBlau" in body.name:
+		body.morir()
+	if "PersonatgeVermell" in body.name:
+		body.morir()
+	queue_free()
+	
