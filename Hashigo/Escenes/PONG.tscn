@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Images/Sprites/Personatge/blocky_walkright_blau.png" type="Texture" id=1]
 [ext_resource path="res://Images/Sprites/Personatge/blocky_walkright_blau - copia.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/barrera vermella.gd" type="Script" id=7]
 [ext_resource path="res://Images/Sprites/Bola.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/bola.gd" type="Script" id=9]
+[ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20.175, 539.694 )
@@ -16,32 +17,27 @@ extents = Vector2( 20.175, 539.694 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 18.0164, 541.852 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 984.77, 10 )
-
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 951.654, 15.5814 )
 
-[sub_resource type="CircleShape2D" id=7]
-radius = 22.4602
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 984.77, 10 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 19.3293, 60.2545 )
+[sub_resource type="CircleShape2D" id=5]
+radius = 20.2523
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 21.6178
 
 [sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 19.3293, 60.2545 )
+
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 16.6826, 65.5287 )
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 30.8207, 20.158 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 35.3647, 20.1579 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 39.9089, 29.2462 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 30.8206, 26.9742 )
+[sub_resource type="DynamicFont" id=13]
+size = 80
+font_data = ExtResource( 10 )
 
 [node name="pong" type="Node2D"]
 
@@ -81,29 +77,44 @@ flip_h = true
 hframes = 4
 frame = 1
 
-[node name="parets" type="Area2D" parent="."]
+[node name="Paret inferior" type="StaticBody2D" parent="." groups=[
+"paret",
+]]
 
-[node name="paret superior" type="CollisionShape2D" parent="parets"]
-position = Vector2( 961.998, 16.2323 )
-shape = SubResource( 3 )
-
-[node name="paret inferior" type="CollisionShape2D" parent="parets"]
+[node name="paret inferior2" type="CollisionShape2D" parent="Paret inferior"]
 position = Vector2( 957.778, 1074.66 )
 shape = SubResource( 4 )
 
+[node name="Paret superior" type="StaticBody2D" parent="." groups=[
+"paret",
+]]
+
+[node name="paret superior2" type="CollisionShape2D" parent="Paret superior"]
+position = Vector2( 961.998, 16.2323 )
+shape = SubResource( 3 )
+
 [node name="bola" type="KinematicBody2D" parent="."]
+position = Vector2( 963.683, 515.359 )
 script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="bola"]
-position = Vector2( 964.883, 540.655 )
+position = Vector2( 0.171875, 0.33252 )
 scale = Vector2( 0.103365, 0.103365 )
 texture = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bola"]
-position = Vector2( 964.904, 541.026 )
-shape = SubResource( 7 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bola"]
+position = Vector2( 0.192947, 0.70369 )
+shape = SubResource( 5 )
 
-[node name="barrera blava" type="KinematicBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="bola"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bola/Area2D"]
+position = Vector2( 0.193008, 0.70369 )
+shape = SubResource( 12 )
+
+[node name="barrera blava" type="KinematicBody2D" parent="." groups=[
+"porteria",
+]]
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="barrera blava"]
@@ -114,9 +125,11 @@ texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barrera blava"]
 position = Vector2( 1731.38, 491.266 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
-[node name="barrera vermella" type="KinematicBody2D" parent="."]
+[node name="barrera vermella" type="KinematicBody2D" parent="." groups=[
+"porteria",
+]]
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="barrera vermella"]
@@ -127,22 +140,19 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barrera vermella"]
 position = Vector2( 202.711, 494.403 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
-[node name="limits" type="StaticBody2D" parent="."]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
-[node name="tope blau dalt" type="CollisionShape2D" parent="limits"]
-position = Vector2( 1719.96, 13.6325 )
-shape = SubResource( 8 )
-
-[node name="tope blau baix" type="CollisionShape2D" parent="limits"]
-position = Vector2( 1740.41, 1070.15 )
-shape = SubResource( 9 )
-
-[node name="tope vermell baix" type="CollisionShape2D" parent="limits"]
-position = Vector2( 193.126, 0 )
-shape = SubResource( 10 )
-
-[node name="tope vermell dalt" type="CollisionShape2D" parent="limits"]
-position = Vector2( 224.935, 1076.96 )
-shape = SubResource( 11 )
+[node name="Temps" type="Label" parent="."]
+margin_left = 185.254
+margin_top = 69.5955
+margin_right = 225.254
+margin_bottom = 83.5955
+custom_fonts/font = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="bola/Area2D" to="bola" method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer" to="bola" method="_on_Timer_timeout"]
