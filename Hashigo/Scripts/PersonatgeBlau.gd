@@ -58,6 +58,8 @@ func anima(moviment):
 	elif velocitat.x > 0:
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("Correr")
+	if velocitat.x == 0:
+		$AnimatedSprite.play("Quiet")
 
 
 
