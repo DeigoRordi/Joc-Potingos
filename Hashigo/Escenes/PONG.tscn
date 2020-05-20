@@ -17,25 +17,25 @@ extents = Vector2( 20.175, 539.694 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 18.0164, 541.852 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 951.654, 15.5814 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 984.77, 10 )
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 20.2523
 
-[sub_resource type="CircleShape2D" id=12]
+[sub_resource type="CircleShape2D" id=6]
 radius = 21.6178
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 19.3293, 60.2545 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 16.6826, 65.5287 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=9]
 size = 80
 font_data = ExtResource( 10 )
 
@@ -83,7 +83,7 @@ frame = 1
 
 [node name="paret inferior2" type="CollisionShape2D" parent="Paret inferior"]
 position = Vector2( 957.778, 1074.66 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Paret superior" type="StaticBody2D" parent="." groups=[
 "paret",
@@ -91,7 +91,7 @@ shape = SubResource( 4 )
 
 [node name="paret superior2" type="CollisionShape2D" parent="Paret superior"]
 position = Vector2( 961.998, 16.2323 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="bola" type="KinematicBody2D" parent="."]
 position = Vector2( 963.683, 515.359 )
@@ -110,7 +110,7 @@ shape = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bola/Area2D"]
 position = Vector2( 0.193008, 0.70369 )
-shape = SubResource( 12 )
+shape = SubResource( 6 )
 
 [node name="barrera blava" type="KinematicBody2D" parent="." groups=[
 "porteria",
@@ -125,7 +125,7 @@ texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barrera blava"]
 position = Vector2( 1731.38, 491.266 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="barrera vermella" type="KinematicBody2D" parent="." groups=[
 "porteria",
@@ -140,7 +140,7 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="barrera vermella"]
 position = Vector2( 202.711, 494.403 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -150,7 +150,7 @@ margin_left = 185.254
 margin_top = 69.5955
 margin_right = 225.254
 margin_bottom = 83.5955
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

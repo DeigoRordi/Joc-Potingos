@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Escenes/PersonatgeBlau.tscn" type="PackedScene" id=2]
@@ -7,6 +7,15 @@
 [ext_resource path="res://Scripts/PersonatgeVermell.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Vides_Vermell.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Vides_Blau.gd" type="Script" id=7]
+[ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 8 )
 
 [node name="Disparar" type="Node2D"]
 
@@ -27,10 +36,12 @@ position = Vector2( 63.6129, 34.4186 )
 [node name="CanvasLayer" type="CanvasLayer" parent="PersonatgeBlau"]
 
 [node name="Label" type="Label" parent="PersonatgeBlau/CanvasLayer"]
-margin_left = 67.7325
+margin_left = 83.7325
 margin_top = 65.1604
-margin_right = 167.733
+margin_right = 489.732
 margin_bottom = 165.16
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.00784314, 0, 1, 1 )
 text = "Vides Blau"
 script = ExtResource( 7 )
 __meta__ = {
@@ -50,10 +61,14 @@ position = Vector2( 73.3426, 29.8696 )
 [node name="Label" type="Label" parent="PersonatgeVermell/CanvasLayer"]
 anchor_right = 0.021
 anchor_bottom = 0.013
-margin_left = 1816.17
-margin_top = 66.4438
-margin_right = 1815.85
-margin_bottom = 87.4038
+margin_left = 1165.82
+margin_top = 79.3946
+margin_right = 1798.5
+margin_bottom = 167.355
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "VIDES VERMELL"
+align = 2
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
