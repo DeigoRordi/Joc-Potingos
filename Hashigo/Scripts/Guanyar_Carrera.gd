@@ -1,4 +1,4 @@
-extends Label
+extends Area2D
 
 
 # Declare member variables here. Examples:
@@ -12,12 +12,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if $".."/Start.time_left > 0:
-		self.text = str(int($".."/Start.time_left)+1)
-	else:
-		self.text = ""
+#func _process(delta):
+#	pass
 
 
-
-
+func _on_Area2D_body_entered(body):
+	$".."/Label.text == (body, "És el guanyador")
