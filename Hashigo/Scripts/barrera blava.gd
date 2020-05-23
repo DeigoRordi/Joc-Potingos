@@ -20,3 +20,4 @@ func _process(delta):
 	if Input.is_action_pressed("der_mover_abajo"):
 		velocitat.y = 1000
 	move_and_slide(velocitat)
+	

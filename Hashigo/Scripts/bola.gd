@@ -20,10 +20,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(velocitat_maxima_y)
 	velocitat_maxima_y = time*(50/3)
-	$".."/Temps.text = str(time)
 	move_and_slide(velocitat_bola)
+	if $".."/timer_ronda.time_left != 0:
+		$".."/temps_ronda.text = str(int($".."/timer_ronda.time_left))
 	
 
 
@@ -41,3 +41,10 @@ func _on_Area2D_body_entered(body):
 
 func _on_Timer_timeout():
 	time += 1
+
+
+func _on_timer_ronda_timeout():
+	position = Vector2(963.683,515.359)
+	$".."/temps_ronda.text = ""
+	velocitat_bola.x = 500
+	velocitat_bola.y = 0

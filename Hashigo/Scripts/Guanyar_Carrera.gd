@@ -16,5 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_Area2D_body_entered(body):
-	$".."/Label.text == (body, "És el guanyador")
+#func _on_Area2D_body_entered(body):
+#	Te$".."/Label.text == (body, "És el guanyador")
