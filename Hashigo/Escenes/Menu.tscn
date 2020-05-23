@@ -47,20 +47,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Controls" type="Button" parent="."]
-margin_left = 411.0
-margin_top = 662.0
-margin_right = 775.0
-margin_bottom = 749.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "CONTROLS"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Sortir" type="Button" parent="."]
 margin_left = 77.5212
 margin_top = 752.73
@@ -76,5 +62,4 @@ __meta__ = {
 }
 [connection signal="pressed" from="Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="Minijocs" to="." method="_on_Minijocs_pressed"]
-[connection signal="pressed" from="Controls" to="." method="_on_Controls_pressed"]
 [connection signal="pressed" from="Sortir" to="." method="_on_Sortir_pressed"]

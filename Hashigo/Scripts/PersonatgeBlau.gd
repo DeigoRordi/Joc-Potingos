@@ -14,8 +14,7 @@ func _process(delta):
 
 func morir():
 	vides_blau -= 1
-	if vides_blau == 0:
-		queue_free()
+
 
 func mou(delta):
 	velocitat.x = 0

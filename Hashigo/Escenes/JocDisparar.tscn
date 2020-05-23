@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Escenes/PersonatgeBlau.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Scripts/Vides_Vermell.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Vides_Blau.gd" type="Script" id=7]
 [ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=8]
+[ext_resource path="res://Scripts/JocDisparar.gd" type="Script" id=9]
+[ext_resource path="res://Escenes/PuntsGeneralVermell2.gd" type="Script" id=10]
+[ext_resource path="res://Escenes/PuntsGeneralBlau2.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -17,7 +20,16 @@ font_data = ExtResource( 8 )
 size = 100
 font_data = ExtResource( 8 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 8 )
+
 [node name="Disparar" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 1.29235, 1.29236 )
@@ -26,7 +38,7 @@ format = 1
 tile_data = PoolIntArray( 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 11, 7, 0, 12, 7, 0, 13, 7, 0, 14, 7, 0, 15, 7, 0, 16, 7, 0, 17, 7, 0, 18, 7, 0, 19, 7, 0, 20, 7, 0, 21, 7, 0, 22, 7, 0, 23, 7, 0, 24, 7, 0, 25, 7, 0, 26, 7, 0, 27, 7, 0, 28, 7, 0, 29, 7, 0, 65536, 7, 0, 65565, 7, 0, 131072, 7, 0, 131101, 7, 0, 196608, 7, 0, 196637, 7, 0, 262144, 7, 0, 262155, 4, 0, 262156, 5, 0, 262157, 5, 0, 262158, 6, 0, 262173, 7, 0, 327680, 7, 0, 327708, 11, 0, 327709, 7, 0, 393216, 7, 0, 393240, 3, 0, 393241, 3, 0, 393242, 3, 0, 393243, 3, 0, 393244, 2, 0, 393245, 7, 0, 458752, 7, 0, 458756, 14, 0, 458768, 3, 0, 458769, 3, 0, 458770, 3, 0, 458771, 3, 0, 458781, 7, 0, 524288, 7, 0, 524290, 4, 0, 524291, 5, 0, 524292, 5, 0, 524293, 6, 0, 524317, 7, 0, 589824, 7, 0, 589833, 10, 0, 589853, 7, 0, 655360, 7, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655380, 3, 0, 655381, 3, 0, 655384, 4, 0, 655385, 5, 0, 655386, 5, 0, 655387, 6, 0, 655389, 7, 0, 720896, 7, 0, 720904, 7, 0, 720905, 7, 0, 720906, 7, 0, 720925, 7, 0, 786432, 7, 0, 786439, 3, 0, 786440, 7, 0, 786441, 7, 0, 786442, 7, 0, 786445, 4, 0, 786446, 5, 0, 786447, 5, 0, 786448, 5, 0, 786449, 6, 0, 786461, 7, 0, 851968, 7, 0, 851969, 3, 0, 851970, 3, 0, 851971, 3, 0, 851976, 7, 0, 851977, 7, 0, 851978, 7, 0, 851997, 7, 0, 917504, 7, 0, 917505, 12, 0, 917512, 7, 0, 917513, 7, 0, 917514, 7, 0, 917515, 12, 0, 917533, 7, 0, 983040, 7, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 7, 0, 1048576, 7, 0, 1048577, 7, 0, 1048578, 7, 0, 1048579, 7, 0, 1048580, 7, 0, 1048581, 7, 0, 1048582, 7, 0, 1048583, 7, 0, 1048584, 7, 0, 1048585, 7, 0, 1048586, 7, 0, 1048587, 7, 0, 1048588, 7, 0, 1048589, 7, 0, 1048590, 7, 0, 1048591, 7, 0, 1048592, 7, 0, 1048593, 7, 0, 1048594, 7, 0, 1048595, 7, 0, 1048596, 7, 0, 1048597, 7, 0, 1048598, 7, 0, 1048599, 7, 0, 1048600, 7, 0, 1048601, 7, 0, 1048602, 7, 0, 1048603, 7, 0, 1048604, 7, 0, 1048605, 7, 0 )
 
 [node name="PersonatgeBlau" parent="." instance=ExtResource( 2 )]
-position = Vector2( 146.827, 779.48 )
+position = Vector2( 1616.75, 330.517 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 4 )
 
@@ -36,20 +48,21 @@ position = Vector2( 63.6129, 34.4186 )
 [node name="CanvasLayer" type="CanvasLayer" parent="PersonatgeBlau"]
 
 [node name="Label" type="Label" parent="PersonatgeBlau/CanvasLayer"]
-margin_left = 83.7325
-margin_top = 65.1604
-margin_right = 489.732
-margin_bottom = 165.16
+margin_left = 1337.81
+margin_top = 69.4774
+margin_right = 1845.81
+margin_bottom = 171.477
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.00784314, 0, 1, 1 )
 text = "Vides Blau"
+align = 2
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PersonatgeVermell" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1718.47, 331.161 )
+position = Vector2( 140.624, 782.282 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 5 )
 
@@ -61,15 +74,35 @@ position = Vector2( 73.3426, 29.8696 )
 [node name="Label" type="Label" parent="PersonatgeVermell/CanvasLayer"]
 anchor_right = 0.021
 anchor_bottom = 0.013
-margin_left = 1165.82
-margin_top = 79.3946
-margin_right = 1798.5
-margin_bottom = 167.355
+margin_left = 71.4725
+margin_top = 64.2853
+margin_right = 704.153
+margin_bottom = 152.246
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "VIDES VERMELL"
-align = 2
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuntsGeneralVermell2" type="Label" parent="."]
+margin_top = -8.63388
+margin_right = 69.0
+margin_bottom = 93.3661
+custom_fonts/font = SubResource( 3 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuntsGeneralBlau" type="Label" parent="."]
+margin_left = 1845.18
+margin_top = -7.13504
+margin_right = 1922.18
+margin_bottom = 94.865
+custom_fonts/font = SubResource( 4 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Vides="*res://Scripts/Vides.gd"
+puntuacio_general="*res://Scripts/Menu.gd"
 
 [display]
 

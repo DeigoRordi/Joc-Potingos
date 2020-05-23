@@ -13,8 +13,7 @@ func _process(delta):
 	anima(moviment)
 func morir():
 	vides_vermell -= 1
-	if vides_vermell == 0:
-		queue_free()
+
 func mou(delta):
 	velocitat.x = 0
 	if is_on_floor() or is_on_ceiling():
