@@ -12,9 +12,7 @@
 [ext_resource path="res://Scripts/Guanyar_Carrera.gd" type="Script" id=10]
 [ext_resource path="res://Escenes/PuntsGeneralVermell.gd" type="Script" id=11]
 [ext_resource path="res://Escenes/PuntsGeneralBlau.gd" type="Script" id=12]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 52.6772, 51.7643 )
+[ext_resource path="res://Escenes/Carrera.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=2]
 size = 300
@@ -24,22 +22,23 @@ font_data = ExtResource( 8 )
 size = 300
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=4]
 size = 100
 font_data = ExtResource( 8 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 113.617, 701.351 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 100
-font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 100
 font_data = ExtResource( 8 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 100
+font_data = ExtResource( 8 )
+
 [node name="Carrera" type="Node"]
+script = ExtResource( 13 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -57,22 +56,18 @@ tile_data = PoolIntArray( -1, 6, 0, -65536, 6, 0, -65535, 6, 0, -65534, 6, 0, -6
 
 [node name="Jugador Vermell" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192.841, 738.377 )
+collision_layer = 2
 script = ExtResource( 6 )
 
 [node name="Jugador Blau" parent="." instance=ExtResource( 4 )]
 position = Vector2( 200.899, 172.199 )
+collision_layer = 2
 script = ExtResource( 5 )
 
 [node name="Start" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 autostart = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 206.777, 434.232 )
-shape = SubResource( 1 )
 
 [node name="Temps_text" type="Timer" parent="."]
 one_shot = true
@@ -91,9 +86,9 @@ __meta__ = {
 }
 
 [node name="Start2" type="Label" parent="."]
-margin_left = 508.433
+margin_left = 462.991
 margin_top = 383.76
-margin_right = 1333.43
+margin_right = 1287.99
 margin_bottom = 687.76
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
@@ -102,31 +97,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource( 10 )
-
-[node name="Guanyar" type="Label" parent="Area2D"]
-margin_left = 664.0
-margin_top = 480.0
-margin_right = 1159.0
-margin_bottom = 582.0
-custom_fonts/font = SubResource( 7 )
-text = "guanyar"
+[node name="Guanyar" type="Label" parent="."]
+margin_left = 71.5501
+margin_top = 485.0
+margin_right = 1781.55
+margin_bottom = 587.0
+custom_fonts/font = SubResource( 4 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 10 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 417, 288 )
-shape = SubResource( 4 )
+position = Vector2( 553.325, 462.591 )
+shape = SubResource( 5 )
 
 [node name="PuntuacioGeneralBlau" type="Label" parent="."]
 margin_left = 11.9583
 margin_top = 52.6166
 margin_right = 104.958
 margin_bottom = 149.617
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -137,11 +133,18 @@ margin_left = 20.0
 margin_top = 676.0
 margin_right = 111.0
 margin_bottom = 767.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="temps guanyar" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 [connection signal="timeout" from="Start" to="Start2" method="_on_Start_timeout"]
 [connection signal="timeout" from="Temps_text" to="Start2" method="_on_Temps_text_timeout"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Jugador Vermell" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Jugador Blau" method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="temps guanyar" to="." method="_on_temps_guanyar_timeout"]

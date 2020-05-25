@@ -15,3 +15,4 @@ func _process(delta):
 		if Input.is_action_just_pressed("Carrera_blau"):
 			position.x += 10
 	var moviment = move_and_slide(velocitat, Vector2.UP)
+

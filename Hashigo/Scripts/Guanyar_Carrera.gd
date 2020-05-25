@@ -17,6 +17,12 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	print(body.get_name())
-	print(body.name)
-	$Guanyar.text == str(body.name + "és el guanyador")
+	if body.name == "Jugador Blau":
+		puntuacio_general.punts_general_blau += 1
+	if body.name == "Jugador Vermell":
+		puntuacio_general.punts_general_vermell += 1
+	get_parent().get_node("Guanyar").set_text(str(body.name + "  es  el  guanyador"))
+	get_parent().get_node("temps guanyar").start()
+	queue_free()
+	
+	
