@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Escenes/PersonatgeBlau.tscn" type="PackedScene" id=2]
@@ -9,8 +9,8 @@
 [ext_resource path="res://Scripts/Vides_Blau.gd" type="Script" id=7]
 [ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=8]
 [ext_resource path="res://Scripts/JocDisparar.gd" type="Script" id=9]
-[ext_resource path="res://Escenes/PuntsGeneralVermell2.gd" type="Script" id=10]
-[ext_resource path="res://Escenes/PuntsGeneralBlau2.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/PuntsGeneralVermell2.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/PuntsGeneralBlau2.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -25,6 +25,10 @@ size = 100
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 100
 font_data = ExtResource( 8 )
 
@@ -106,3 +110,18 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Guanyar" type="Label" parent="."]
+margin_left = 306.504
+margin_top = 403.635
+margin_right = 1622.5
+margin_bottom = 591.635
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="temps guanyar" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+[connection signal="timeout" from="temps guanyar" to="." method="_on_temps_guanyar_timeout"]

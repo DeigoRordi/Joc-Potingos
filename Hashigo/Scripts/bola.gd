@@ -48,3 +48,6 @@ func _on_timer_ronda_timeout():
 	$".."/temps_ronda.text = ""
 	velocitat_bola.x = 500
 	velocitat_bola.y = 0
+
+func desapareixer():
+	queue_free()
