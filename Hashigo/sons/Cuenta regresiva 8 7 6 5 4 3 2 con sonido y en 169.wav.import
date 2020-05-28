@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Cuenta regresiva 8 7 6 5 4 3 2 con sonido y en 169.wav-72768e570a10be9be65a868eec828d57.sample"
+
+[deps]
+
+source_file="res://sons/Cuenta regresiva 8 7 6 5 4 3 2 con sonido y en 169.wav"
+dest_files=[ "res://.import/Cuenta regresiva 8 7 6 5 4 3 2 con sonido y en 169.wav-72768e570a10be9be65a868eec828d57.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

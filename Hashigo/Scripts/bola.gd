@@ -4,12 +4,8 @@ var velocitat_bola = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
 var time = 0
 var velocitat_maxima_y = 0
-
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var pitch = 1
+var pip = 3
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +16,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print($".."/Contacte.pitch_scale)
 	velocitat_maxima_y = time*(50/3)
 	move_and_slide(velocitat_bola)
 	if $".."/timer_ronda.time_left != 0:
@@ -31,6 +28,8 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("paret"):
 		velocitat_bola.y *= -1
 	elif body.is_in_group("porteria"):
+		$".."/Contacte.play()
+		$".."/Contacte.pitch_scale = pitch
 		velocitat_bola.x *= -1
 		if velocitat_bola.y > velocitat_maxima_y:
 			velocitat_bola.y = velocitat_maxima_y
@@ -40,10 +39,15 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_Timer_timeout():
+	if pip != 0:
+		$".."/Timer_ronda.play()
+		pip-=1
 	time += 1
+	pitch += 0.01
 
 
 func _on_timer_ronda_timeout():
+	$".."/Pip_final.play()
 	position = Vector2(963.683,515.359)
 	$".."/temps_ronda.text = ""
 	velocitat_bola.x = 500

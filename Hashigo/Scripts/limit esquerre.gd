@@ -9,4 +9,5 @@ func _on_limit_esquerre_body_entered(body):
 	if body.name == "bola":
 		marcador_blau += 1
 		$".."/timer_ronda.start(4)
+		$".."/bola.pip = 4
 		
