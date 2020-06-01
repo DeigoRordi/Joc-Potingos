@@ -1,32 +1,84 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://Images/Sprites/crown_PNG23858.png" type="Texture" id=2]
+[ext_resource path="res://Escenes/Label2.gd" type="Script" id=2]
 [ext_resource path="res://Images/Backgrounds/fons pong.jpg" type="Texture" id=3]
+[ext_resource path="res://Escenes/Button.gd" type="Script" id=4]
+[ext_resource path="res://Escenes/Label3.gd" type="Script" id=5]
+[ext_resource path="res://Images/Backgrounds/768px-Solid_white.svg.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 125
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 200
+font_data = ExtResource( 1 )
+
 [node name="Guanya Blau" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1006.89, 538.122 )
+position = Vector2( 1004.62, 544.938 )
 scale = Vector2( 2.48544, 1.74739 )
 texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 147.0
-margin_top = 366.0
+margin_top = 185.0
 margin_right = 1793.0
-margin_bottom = 587.0
+margin_bottom = 406.0
 custom_fonts/font = SubResource( 1 )
 text = "El  jugador  Blau  ha  guanyat"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button" type="Button" parent="."]
+margin_left = 755.845
+margin_top = 779.081
+margin_right = 1191.84
+margin_bottom = 888.081
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.615686, 0.564706, 0.564706, 1 )
+text = "Sortir"
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 765.854
+margin_top = 454.544
+margin_right = 880.854
+margin_bottom = 657.544
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.996078, 0.0196078, 0.0196078, 1 )
+text = "0"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 1058.14
+margin_top = 447.728
+margin_right = 1173.14
+margin_bottom = 650.728
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0.0196078, 1, 1 )
+text = "0"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 968.022, 679.899 )
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 2 )
+position = Vector2( 966.358, 560.066 )
+scale = Vector2( 0.0769709, 0.0266777 )
+texture = ExtResource( 6 )
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

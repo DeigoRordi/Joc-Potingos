@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Escenes/PersonatgeBlau.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scripts/JocDisparar.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/PuntsGeneralVermell2.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/PuntsGeneralBlau2.gd" type="Script" id=11]
+[ext_resource path="res://Images/Backgrounds/1200px-Solid_black.svg.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -124,4 +125,13 @@ __meta__ = {
 [node name="temps guanyar" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2( 958.642, 547.819 )
+scale = Vector2( 1.59045, 0.909341 )
+texture = ExtResource( 12 )
 [connection signal="timeout" from="temps guanyar" to="." method="_on_temps_guanyar_timeout"]

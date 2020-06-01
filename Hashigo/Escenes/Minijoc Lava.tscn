@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Images/Stone_Platform.png" type="Texture" id=1]
+[ext_resource path="res://Images/Backgrounds/descarga.png" type="Texture" id=1]
 [ext_resource path="res://Escenes/PersonatgeVermell.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Escenes/PersonatgeBlau.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Images/Sprites/Solid_Red_Sized__25214.1507754519.jpg" type="Texture" id=4]
@@ -8,16 +8,31 @@
 [ext_resource path="res://Escenes/PersonatgeBlauLava.gd" type="Script" id=6]
 [ext_resource path="res://Escenes/KinematicBody2D.gd" type="Script" id=7]
 [ext_resource path="res://Escenes/Plataformes.tscn" type="PackedScene" id=8]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 960.967, 93.1028 )
+[ext_resource path="res://Images/Backgrounds/1200px-Solid_black.svg.png" type="Texture" id=9]
+[ext_resource path="res://Escenes/Minijoc Lava.gd" type="Script" id=10]
+[ext_resource path="res://Escenes/Label.gd" type="Script" id=11]
+[ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=12]
+[ext_resource path="res://Escenes/Label2.gd" type="Script" id=13]
+[ext_resource path="res://Escenes/Label3.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 960.967, 93.1028 )
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 172.314, 26.9177 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 200
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 12 )
 
 [node name="Minijoc Lava" type="Node2D"]
 
 [node name="StaticBody2D" type="Area2D" parent="."]
+position = Vector2( 0, 14 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 958.246, 995.53 )
@@ -28,9 +43,10 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 957.99, 1003.04 )
 scale = Vector2( 2, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="Plats" type="Node" parent="."]
+[node name="Plats" type="Node2D" parent="."]
+script = ExtResource( 10 )
 
 [node name="KinematicBody2D6" type="KinematicBody2D" parent="Plats"]
 position = Vector2( 686.045, 95.2452 )
@@ -38,13 +54,13 @@ scale = Vector2( 1.08187, 1.08187 )
 script = ExtResource( 7 )
 
 [node name="plataformes" type="Sprite" parent="Plats/KinematicBody2D6"]
-position = Vector2( 53.3987, 4.21011 )
-scale = Vector2( 1.46976, 1.11551 )
+position = Vector2( 49.5311, -20.2848 )
+scale = Vector2( 1.50414, 0.2102 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plats/KinematicBody2D6"]
 position = Vector2( 45.516, -18.8808 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Plats"]
 position = Vector2( 135.279, 645.572 )
@@ -52,13 +68,13 @@ scale = Vector2( 1.04013, 1.04013 )
 script = ExtResource( 7 )
 
 [node name="plataformes" type="Sprite" parent="Plats/KinematicBody2D"]
-position = Vector2( 53.3987, 4.21011 )
-scale = Vector2( 1.46976, 1.11551 )
+position = Vector2( 57.4215, -26.6316 )
+scale = Vector2( 1.50552, 0.221548 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plats/KinematicBody2D"]
 position = Vector2( 55.3973, -22.5729 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="KinematicBody2D2" type="KinematicBody2D" parent="Plats"]
 position = Vector2( 690.279, 493.572 )
@@ -66,13 +82,13 @@ scale = Vector2( 1.04013, 1.04013 )
 script = ExtResource( 7 )
 
 [node name="plataformes" type="Sprite" parent="Plats/KinematicBody2D2"]
-position = Vector2( 53.3987, 4.21011 )
-scale = Vector2( 1.46976, 1.11551 )
+position = Vector2( 49.3759, -21.2678 )
+scale = Vector2( 1.50552, 0.245387 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plats/KinematicBody2D2"]
 position = Vector2( 50.2143, -22.2942 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="KinematicBody2D4" parent="Plats" instance=ExtResource( 8 )]
 position = Vector2( 1259.98, 324.924 )
@@ -168,9 +184,6 @@ position = Vector2( 702.745, -5014.74 )
 [node name="KinematicBody2D38" parent="Plats" instance=ExtResource( 8 )]
 position = Vector2( 1220.07, -5314.24 )
 
-[node name="KinematicBody2D37" parent="Plats" instance=ExtResource( 8 )]
-position = Vector2( 1220.07, -5314.24 )
-
 [node name="KinematicBody2D40" parent="Plats" instance=ExtResource( 8 )]
 position = Vector2( 1325.63, -4798.16 )
 
@@ -201,6 +214,9 @@ position = Vector2( 657.066, -6076.64 )
 [node name="KinematicBody2D47" parent="Plats" instance=ExtResource( 8 )]
 position = Vector2( 657.066, -6076.64 )
 
+[node name="KinematicBody2D37" parent="Plats" instance=ExtResource( 8 )]
+position = Vector2( 1220.07, -5314.24 )
+
 [node name="PersonatgeVermell" parent="." instance=ExtResource( 2 )]
 position = Vector2( 111.852, 534.966 )
 scale = Vector2( 0.7, 0.7 )
@@ -213,7 +229,54 @@ script = ExtResource( 6 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2( 964.429, 546.502 )
+scale = Vector2( 1.6099, 0.915646 )
+texture = ExtResource( 9 )
+
+[node name="Timer Començar" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 819.268
+margin_top = 311.761
+margin_right = 1041.27
+margin_bottom = 563.761
+custom_fonts/font = SubResource( 3 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 29.2819
+margin_top = 19.5213
+margin_right = 144.282
+margin_bottom = 163.521
+custom_fonts/font = SubResource( 4 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 1810.93
+margin_top = 24.0284
+margin_right = 1925.93
+margin_bottom = 168.028
+custom_fonts/font = SubResource( 4 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="StaticBody2D" to="PersonatgeBlau" method="_on_StaticBody2D_body_entered"]
 [connection signal="body_entered" from="StaticBody2D" to="PersonatgeVermell" method="_on_StaticBody2D_body_entered"]
 [connection signal="timeout" from="Timer" to="PersonatgeBlau" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="PersonatgeVermell" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer Començar" to="Plats" method="_on_Timer_Comenar_timeout"]

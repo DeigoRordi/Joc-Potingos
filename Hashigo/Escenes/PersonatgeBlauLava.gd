@@ -52,6 +52,7 @@ func anima(moviment):
 func _on_StaticBody2D_body_entered(body):
 	if body.name == "PersonatgeBlau":
 		puntuacio_general.punts_general_vermell += 1
+		get_parent().get_node("Plats/KinematicBody2D").velocitat.y = 0
 		get_parent().get_node("Timer").start()
 		queue_free()
 
