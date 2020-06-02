@@ -10,5 +10,6 @@ func _process(delta):
 func _on_limit_dreta_body_entered(body):
 	if body.name == "bola":
 		marcador_vermell += 1
-		$".."/timer_ronda.start(4)
-		$".."/bola.pip = 4
+		if marcador_vermell < 3:
+			$".."/timer_ronda.start(4)
+			$".."/bola.pip = 4
