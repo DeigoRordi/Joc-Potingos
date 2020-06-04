@@ -148,7 +148,7 @@ one_shot = true
 stream = ExtResource( 14 )
 [connection signal="timeout" from="Start" to="Start2" method="_on_Start_timeout"]
 [connection signal="timeout" from="Temps_text" to="Start2" method="_on_Temps_text_timeout"]
+[connection signal="body_entered" from="Area2D" to="Jugador Vermell" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Jugador Blau" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Jugador Vermell" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="temps guanyar" to="." method="_on_temps_guanyar_timeout"]

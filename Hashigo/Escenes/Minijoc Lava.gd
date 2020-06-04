@@ -3,7 +3,7 @@ var comensar = 0
 
 func _ready():
 	get_parent().get_node("Timer Començar").start()
-
+	
 
 
 

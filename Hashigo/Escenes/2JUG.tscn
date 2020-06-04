@@ -41,25 +41,25 @@ texture = ExtResource( 1 )
 position = Vector2( 221.043, 719.676 )
 scale = Vector2( 2.692, 2.692 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Porta2" type="AnimatedSprite" parent="."]
 position = Vector2( 594.142, 614.443 )
 scale = Vector2( 2.692, 2.692 )
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Porta3" type="AnimatedSprite" parent="."]
 position = Vector2( 1022.25, 502.034 )
 scale = Vector2( 2.692, 2.692 )
 frames = SubResource( 5 )
-frame = 1
 playing = true
 
 [node name="Porta4" type="AnimatedSprite" parent="."]
 position = Vector2( 1378.61, 389.626 )
 scale = Vector2( 2.692, 2.692 )
 frames = SubResource( 5 )
+frame = 3
 playing = true
