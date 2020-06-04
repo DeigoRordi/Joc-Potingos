@@ -37,6 +37,7 @@ func mou(delta):
 		velocitat += salt
 		
 	if Input.is_action_just_pressed("enter"):
+		$jugadorBlau.play()
 		var bola = BOLA.instance()
 		if sign($Position2D.position.x) == 1:
 			bola.set_bola_direction(1)

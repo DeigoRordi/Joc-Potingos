@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Escenes/PersonatgeBlau.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scripts/PuntsGeneralVermell2.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/PuntsGeneralBlau2.gd" type="Script" id=11]
 [ext_resource path="res://Images/Backgrounds/1200px-Solid_black.svg.png" type="Texture" id=12]
+[ext_resource path="res://sons/Sonido disparo pistola 9 mm [SOUND EFFECTS].wav" type="AudioStream" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -66,6 +67,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="jugadorBlau" type="AudioStreamPlayer" parent="PersonatgeBlau"]
+stream = ExtResource( 13 )
+
 [node name="PersonatgeVermell" parent="." instance=ExtResource( 3 )]
 position = Vector2( 140.624, 782.282 )
 scale = Vector2( 0.7, 0.7 )
@@ -90,6 +94,9 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="jugadorVermell" type="AudioStreamPlayer" parent="PersonatgeVermell"]
+stream = ExtResource( 13 )
 
 [node name="PuntsGeneralVermell2" type="Label" parent="."]
 margin_top = -8.63388

@@ -34,6 +34,7 @@ func mou(delta):
 	if Input.is_action_pressed("ui_up2") and is_on_floor():
 		velocitat += salt
 	if Input.is_action_just_pressed("ui_focus_next"):
+		$jugadorVermell.play()
 		var bola = BOLA.instance()
 		if sign($Position2D.position.x) == 1:
 			bola.set_bola_direction(1)
