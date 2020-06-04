@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/musica joc disparar.wav-a170cf3748712528cb14e669846db53e.sample"
+
+[deps]
+
+source_file="res://sons/musica joc disparar.wav"
+dest_files=[ "res://.import/musica joc disparar.wav-a170cf3748712528cb14e669846db53e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
