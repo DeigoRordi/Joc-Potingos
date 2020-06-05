@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 # Declare member variables here. Examples:
@@ -16,5 +16,24 @@ func _ready():
 #	pass
 
 
+
+
+
+func _on_carrera_pressed():
+	get_tree().change_scene("res://Escenes/controls_carrera.tscn")
+
+
+func _on_lava_pressed():
+	get_tree().change_scene("res://Escenes/controls_lava.tscn")
+
+
+func _on_disparar_pressed():
+	get_tree().change_scene("res://Escenes/controls_disparar.tscn")
+
+
+func _on_pong_pressed():
+	get_tree().change_scene("res://Escenes/controlspong.tscn")
+
+
 func _on_Button_pressed():
-	get_tree().change_scene("res://Escenes/Menu.tscn")
+	get_tree().change_scene("res://Escenes/menu.tscn")

@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/Backgrounds/1200px-Solid_black.svg.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/controls_lava.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 65
+font_data = ExtResource( 2 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1029.44, 884.104 )
+scale = Vector2( 2.3162, 2.3162 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 689.393
+margin_top = 26.7081
+margin_right = 1287.39
+margin_bottom = 145.708
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Controls       lava"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 66.6221
+margin_top = 179.51
+margin_right = 604.622
+margin_bottom = 298.51
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Fletxa dreta  i  D"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 61.0703
+margin_top = 333.111
+margin_right = 599.07
+margin_bottom = 452.111
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Fletxa esquerra  i  A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 53.6678
+margin_top = 484.862
+margin_right = 679.668
+margin_bottom = 603.862
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Fletxa amunt  i  w"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 949.367
+margin_top = 185.062
+margin_right = 1737.37
+margin_bottom = 304.062
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Avançar cap a la dreta"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 943.816
+margin_top = 329.41
+margin_right = 1731.82
+margin_bottom = 448.41
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Avançar cap a l'esquerra"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="."]
+margin_left = 314.359
+margin_top = 709.8
+margin_right = 1540.36
+margin_bottom = 828.8
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "\"Intenta   no   caure   a   la    lava\"   !!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="."]
+margin_left = 951.218
+margin_top = 484.862
+margin_right = 1817.22
+margin_bottom = 603.862
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Saltar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 781.063
+margin_top = 930.816
+margin_right = 1009.06
+margin_bottom = 1023.82
+custom_fonts/font = SubResource( 2 )
+text = "Tornar"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
